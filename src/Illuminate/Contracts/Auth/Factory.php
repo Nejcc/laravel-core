@@ -10,7 +10,7 @@ interface Factory
      * @param  string|null  $name
      * @return \Illuminate\Contracts\Auth\Guard|\Illuminate\Contracts\Auth\StatefulGuard
      */
-    public function guard($name = null);
+    public function guard(?string $name = null);
 
     /**
      * Set the default guard the factory should serve.
@@ -18,5 +18,5 @@ interface Factory
      * @param  string  $name
      * @return void
      */
-    public function shouldUse($name);
+    public function shouldUse(string $name);
 }
