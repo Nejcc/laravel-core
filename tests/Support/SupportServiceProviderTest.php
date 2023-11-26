@@ -109,7 +109,7 @@ class SupportServiceProviderTest extends TestCase
 
 class ServiceProviderForTestingOne extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         //
     }
@@ -124,7 +124,7 @@ class ServiceProviderForTestingOne extends ServiceProvider
 
 class ServiceProviderForTestingTwo extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         //
     }

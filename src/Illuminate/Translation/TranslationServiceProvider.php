@@ -12,7 +12,7 @@ class TranslationServiceProvider extends ServiceProvider implements DeferrablePr
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerLoader();
 
@@ -49,7 +49,7 @@ class TranslationServiceProvider extends ServiceProvider implements DeferrablePr
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['translator', 'translation.loader'];
     }

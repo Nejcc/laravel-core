@@ -21,7 +21,7 @@ class FoundationServiceProvidersTest extends TestCase
 
 class HeadServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         //
     }
@@ -34,7 +34,7 @@ class HeadServiceProvider extends ServiceProvider
 
 class TailServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app['tail.registered'] = true;
     }

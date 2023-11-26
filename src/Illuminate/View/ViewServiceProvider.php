@@ -16,7 +16,7 @@ class ViewServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerFactory();
         $this->registerViewFinder();

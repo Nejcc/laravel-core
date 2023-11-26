@@ -38,7 +38,7 @@ class CustomPayloadTest extends TestCase
 
 class QueueServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind('one.time.password', function () {
             return random_int(1, 10);

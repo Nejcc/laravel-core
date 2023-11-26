@@ -13,7 +13,7 @@ class SessionServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerSessionManager();
 

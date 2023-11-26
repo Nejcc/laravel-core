@@ -12,7 +12,7 @@ class HashServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('hash', function ($app) {
             return new HashManager($app);
@@ -28,7 +28,7 @@ class HashServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['hash', 'hash.driver'];
     }

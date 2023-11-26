@@ -36,7 +36,7 @@ class DatabaseServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         Model::clearBootedModels();
 
@@ -74,7 +74,7 @@ class DatabaseServiceProvider extends ServiceProvider
             return $app['db']->connection()->getSchemaBuilder();
         });
 
-        $this->app->singleton('db.transactions', function ($app) {
+        $this->app->singleton('db.transactions', function () {
             return new DatabaseTransactionsManager;
         });
     }

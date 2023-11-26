@@ -12,7 +12,7 @@ class MailServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerIlluminateMailer();
         $this->registerMarkdownRenderer();
@@ -62,7 +62,7 @@ class MailServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'mail.manager',

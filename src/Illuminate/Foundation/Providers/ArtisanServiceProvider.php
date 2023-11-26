@@ -98,14 +98,14 @@ use Illuminate\Routing\Console\MiddlewareMakeCommand;
 use Illuminate\Session\Console\SessionTableCommand;
 use Illuminate\Support\ServiceProvider;
 
-class ArtisanServiceProvider extends ServiceProvider implements DeferrableProvider
+final class ArtisanServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * The commands to be registered.
      *
      * @var array
      */
-    protected $commands = [
+    protected array $commands = [
         'About' => AboutCommand::class,
         'CacheClear' => CacheClearCommand::class,
         'CacheForget' => CacheForgetCommand::class,
@@ -213,7 +213,7 @@ class ArtisanServiceProvider extends ServiceProvider implements DeferrableProvid
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerCommands(array_merge(
             $this->commands,
@@ -827,7 +827,7 @@ class ArtisanServiceProvider extends ServiceProvider implements DeferrableProvid
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return array_merge(array_values($this->commands), array_values($this->devCommands));
     }

@@ -528,12 +528,12 @@ class FoundationApplicationTest extends TestCase
 
 class ApplicationBasicServiceProviderStub extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         //
     }
 
-    public function register()
+    public function register(): void
     {
         //
     }
@@ -541,7 +541,7 @@ class ApplicationBasicServiceProviderStub extends ServiceProvider
 
 class ApplicationDeferredSharedServiceProviderStub extends ServiceProvider implements DeferrableProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('foo', function () {
             return new stdClass;
@@ -553,7 +553,7 @@ class ApplicationDeferredServiceProviderCountStub extends ServiceProvider implem
 {
     public static $count = 0;
 
-    public function register()
+    public function register(): void
     {
         static::$count++;
         $this->app['foo'] = new stdClass;
@@ -564,7 +564,7 @@ class ApplicationDeferredServiceProviderStub extends ServiceProvider implements 
 {
     public static $initialized = false;
 
-    public function register()
+    public function register(): void
     {
         static::$initialized = true;
         $this->app['foo'] = 'foo';
@@ -593,7 +593,7 @@ class SampleImplementation implements SampleInterface
 
 class InterfaceToImplementationDeferredServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind(SampleInterface::class, SampleImplementation::class);
     }
@@ -601,7 +601,7 @@ class InterfaceToImplementationDeferredServiceProvider extends ServiceProvider i
 
 class SampleImplementationDeferredServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->when(SampleImplementation::class)->needs('$primitive')->give(function () {
             return 'foo';
@@ -611,7 +611,7 @@ class SampleImplementationDeferredServiceProvider extends ServiceProvider implem
 
 class ApplicationFactoryProviderStub extends ServiceProvider implements DeferrableProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind('foo', function () {
             static $count = 0;
@@ -623,7 +623,7 @@ class ApplicationFactoryProviderStub extends ServiceProvider implements Deferrab
 
 class ApplicationMultiProviderStub extends ServiceProvider implements DeferrableProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('foo', function () {
             return 'foo';

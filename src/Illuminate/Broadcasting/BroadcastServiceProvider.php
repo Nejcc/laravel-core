@@ -14,7 +14,7 @@ class BroadcastServiceProvider extends ServiceProvider implements DeferrableProv
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(BroadcastManager::class, fn ($app) => new BroadcastManager($app));
 
@@ -32,7 +32,7 @@ class BroadcastServiceProvider extends ServiceProvider implements DeferrableProv
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             BroadcastManager::class,

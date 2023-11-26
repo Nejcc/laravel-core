@@ -12,7 +12,7 @@ class PasswordResetServiceProvider extends ServiceProvider implements Deferrable
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerPasswordBroker();
     }
@@ -38,7 +38,7 @@ class PasswordResetServiceProvider extends ServiceProvider implements Deferrable
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['auth.password', 'auth.password.broker'];
     }

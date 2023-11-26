@@ -13,7 +13,7 @@ class EncryptionServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerEncrypter();
         $this->registerSerializableClosureSecurityKey();

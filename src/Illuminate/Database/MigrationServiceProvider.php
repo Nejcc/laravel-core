@@ -40,7 +40,7 @@ class MigrationServiceProvider extends ServiceProvider implements DeferrableProv
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerRepository();
 
@@ -213,7 +213,7 @@ class MigrationServiceProvider extends ServiceProvider implements DeferrableProv
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return array_merge([
             'migrator', 'migration.repository', 'migration.creator',

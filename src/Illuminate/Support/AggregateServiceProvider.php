@@ -23,7 +23,7 @@ class AggregateServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->instances = [];
 
@@ -37,7 +37,7 @@ class AggregateServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         $provides = [];
 

@@ -30,7 +30,7 @@ class QueueServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->configureSerializableClosureUses();
 
@@ -327,7 +327,7 @@ class QueueServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'queue',

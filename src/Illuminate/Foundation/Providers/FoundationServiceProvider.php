@@ -65,7 +65,7 @@ class FoundationServiceProvider extends AggregateServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -81,7 +81,7 @@ class FoundationServiceProvider extends AggregateServiceProvider
      *
      * @return void
      */
-    public function registerDumper()
+    public function registerDumper(): void
     {
         AbstractCloner::$defaultCasters[ConnectionInterface::class] = [StubCaster::class, 'cutInternals'];
         AbstractCloner::$defaultCasters[Container::class] = [StubCaster::class, 'cutInternals'];

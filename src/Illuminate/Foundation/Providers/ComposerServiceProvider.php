@@ -13,7 +13,7 @@ class ComposerServiceProvider extends ServiceProvider implements DeferrableProvi
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('composer', function ($app) {
             return new Composer($app['files'], $app->basePath());
@@ -25,7 +25,7 @@ class ComposerServiceProvider extends ServiceProvider implements DeferrableProvi
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['composer'];
     }

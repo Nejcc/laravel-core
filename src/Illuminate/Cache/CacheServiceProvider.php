@@ -13,7 +13,7 @@ class CacheServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('cache', function ($app) {
             return new CacheManager($app);
@@ -43,7 +43,7 @@ class CacheServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'cache', 'cache.store', 'cache.psr6', 'memcached.connector', RateLimiter::class,

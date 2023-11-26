@@ -27,7 +27,7 @@ class ParallelTestingServiceProvider extends ServiceProvider implements Deferrab
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         if ($this->app->runningInConsole()) {
             $this->app->singleton(ParallelTesting::class, function () {

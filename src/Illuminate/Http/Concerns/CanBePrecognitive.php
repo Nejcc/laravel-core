@@ -12,7 +12,7 @@ trait CanBePrecognitive
      * @param  array  $rules
      * @return array
      */
-    public function filterPrecognitiveRules($rules)
+    public function filterPrecognitiveRules(array $rules): array
     {
         if (! $this->headers->has('Precognition-Validate-Only')) {
             return $rules;
@@ -28,7 +28,7 @@ trait CanBePrecognitive
      *
      * @return bool
      */
-    public function isAttemptingPrecognition()
+    public function isAttemptingPrecognition(): bool
     {
         return $this->header('Precognition') === 'true';
     }
@@ -38,7 +38,7 @@ trait CanBePrecognitive
      *
      * @return bool
      */
-    public function isPrecognitive()
+    public function isPrecognitive(): bool
     {
         return $this->attributes->get('precognitive', false);
     }
